@@ -1,0 +1,340 @@
+<html><head>
+  <title>Realtime Hourly Data Table </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta content="NCO Web Team" name="GENERATOR">
+  <link href="/cwi/main.css.20060214" type="text/css" rel="STYLESHEET">
+</head>
+<body leftmargin="0" background="/cwi/background.gif" topmargin="0" rightmargin="0" marginheight="0" marginwidth="0">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td align="right" height="19" background="/cwi/topbanner.jpg"><a href="#contents"><img alt="Skip Navigation Links" src="/cwi/skipgraphic.gif" width="1" height="1" border="0"></a> <a href="https://www.weather.gov/"><span class="nwslink">weather.gov</span></a>&nbsp; </td>
+    </tr>
+  </tbody>
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td rowspan="2"><a href="http://www.noaa.gov/"> <img alt="NOAA logo - Click to go to the NOAA homepage" src="/cwi/noaaleft.jpg" width="85" height="78" border="0"></a></td>
+      <td align="left"><img alt="National Weather Service" src="/cwi/nws_title.jpg" width="500" height="20" border="0"></td>
+      <td rowspan="2" width="100%" background="/cwi/ncep_bkgrnd.jpg">&nbsp;</td>
+      <td rowspan="2" align="right"><a href="http://www.nws.noaa.gov/"> <img alt="NWS logo - Click to go to the NWS homepage" src="/cwi/nwsright.jpg" width="85" height="78" border="0"></a></td>
+    </tr>
+    <tr>
+      <td><img alt="National Centers for Environmental Prediction" src="/cwi/nco.jpg" width="500" height="58" border="0"></td>
+      <!-- Put your center header image here. --> 
+    </tr>
+  </tbody>
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" background="/cwi/navbkgrnd.gif" border="0">
+  <tbody>
+    <tr>
+      <td align="left" valign="top" width="94"><img alt="Navigation Bar Left Cap" src="/cwi/navbarleft.jpg" width="94" height="23" border="0"></td>
+      <td class="nav" id="menuitem" align="center" width="10%"><a href="/">Home</a></td>
+      <!-- Take us Home -->
+      <td class="nav" id="menuitem" align="right" width="10%"><a href="https://www.weather.gov/pa/">News</a></td>
+      <td class="nav" id="menuitem" align="right" width="19%"><a href="http://weather.gov/organization.php">Organization</a></td>
+      <td class="searchinput" align="right"><form method="get" action="http://search.usa.gov/search" style="margin-bottom:0; margin-top:0;">
+          <label for="Search"><span class="yellow">Search</span>&nbsp;&nbsp;</label>
+          <input type="hidden" name="affiliate" value="nws.noaa.gov">
+          <input type="hidden" name="v:project" value="firstgov">
+          <input name="query" type="text" value="" size="20" maxlength="256" id="Search">
+          <input type="submit" value="Search">
+        </form></td>
+      <td align="right" valign="bottom" width="24"><img src="/cwi/navbarendcap.jpg" alt="Navigation Bar End Cap" width="24" height="23" border="0"></td>
+    </tr>
+  </tbody>
+</table>
+<!-- Begin code for the navigation strip with links to multiple Centers -->
+
+<table cellspacing="0" width="670" border="0" style="padding:1px 2px 1px 0px;background-image:url('/cwi/background.gif');">
+  <tbody>
+    <tr>
+      <td valign="top" width="140">&nbsp;</td>
+      <td class="navbckgrnd"><a href="http://www.commerce.gov/" class="navbar" style="padding-left:3px;" title="Department of Commerce">DOC</a></td>
+      <td class="navbckgrnd"><a href="http://www.noaa.gov/" class="navbar" title="National Oceanographic and Atmospheric Administration">NOAA</a></td>
+      <td class="navbckgrnd" style="border-right:1px solid white;"><a href="http://www.weather.gov/" class="navbar" title="National Weather Service">NWS</a></td>
+      <td class="navbckgrnd"><a href="http://www.ncep.noaa.gov/" class="navbar" style="padding-left:4px;" title="National Centers for Environmental Prediction">NCEP Centers:</a></td>
+      <td class="navbckgrnd"><a href="http://www.aviationweather.gov/" class="navbar" title="Aviation Weather Center">AWC</a></td>
+      <td class="navbckgrnd"><a href="http://www.cpc.ncep.noaa.gov/" class="navbar" title="Climate Prediction Center">CPC</a></td>
+      <td class="navbckgrnd"><a href="http://www.emc.ncep.noaa.gov/" class="navbar" title="Environmental Modeling Center">EMC</a></td>
+      <td class="navbckgrnd"><a href="http://www.nco.ncep.noaa.gov/" class="navbar" title="NCEP Central Operations">NCO</a></td>
+      <td class="navbckgrnd"><a href="http://www.nhc.noaa.gov/" class="navbar" title="National Hurricane Center">NHC</a></td>
+      <td class="navbckgrnd"><a href="http://www.opc.ncep.noaa.gov/" class="navbar" title="Ocean Prediction Center">OPC</a></td>
+      <td class="navbckgrnd"><a href="http://www.spc.noaa.gov/" class="navbar" title="Storm Prediction Center">SPC</a></td>
+      <td class="navbckgrnd"><a href="http://www.swpc.noaa.gov/" class="navbar" title="Space Weather Prediction Center">SWPC</a></td>
+      <td class="navbckgrnd"><a href="http://www.wpc.ncep.noaa.gov/" class="navbar" title="Weather Prediction Center">WPC</a></td>
+    </tr>
+  </tbody>
+</table>
+<!-- End of code for the navigation strip with links to multiple Centers --> 
+ 
+     <!-- Use virtual include, because this should be in a common place within your DocumentRoot. -->
+<table cellspacing="0" cellpadding="3" width="670" border="0">
+  <tbody>
+  <tr valign="top">
+    <td width="130"><br>
+      <table cellspacing="1" cellpadding="0" width="130" border="0">
+ <tbody>
+   <tr valign="top">
+    <td class="searchinput" align="left" colspan="2">
+      <form method="post" action="http://forecast.weather.gov/zipcity.php">
+        <div id="Layer2" style="position:absolute; width:200px;  height:115px; z-index:2; visibility: hidden">
+          Search by city or zip code. Press enter or select the go button to submit request</div>
+        <span class="yellow"><label for="city_state">Local forecast by<br>"City, St"</label></span><br>
+        <input type="text" id="city_state" name="inputstring" size="8" value="City, St" onfocus="this.value='';">
+        <input type="submit" name="Go2" value="Go">
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td class="searchinput" align="left" colspan="2">
+      <form method="get" action="http://search.usa.gov/search" style="margin-bottom:0; margin-top:0;">
+        <label for="Search"><span class="yellow">Search&nbsp;NCEP</span></label>
+        <input type="hidden" name="affiliate" value="ncep.noaa.gov">
+        <input type="hidden" name="v:sources" value="firstgov-affiliates-search">
+        <input type="hidden" name="v:project" value="firstgov">
+        <input name="query" type="text" value="" size="8" maxlength="256" id="Search">
+        <input type="submit" value="Go">
+      </form>
+    </td>
+  </tr>
+  <!--<tr>
+    <div style="border:1px solid white;text-align:center;width:95%;">
+      <span class="white">
+        <a href="http://www.ncep.noaa.gov/newsletter">NCEP Quarterly<br/>Newsletter</a>
+      </span>
+    </div>
+  </tr>-->
+  <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <hr width="90%">
+        <div style="text-align:center;">
+          <span class="yellow"><a href="https://www.ncep.noaa.gov/newsletter/">NCEP Quarterly Newsletter</a></span>
+        </div>
+        <hr width="90%">
+        <span class="yellow">Current Hazards</span><br>
+        &nbsp;&nbsp;<a href="https://www.spc.noaa.gov/products/wwa/">Watches/Warnings</a><br>
+        &nbsp;&nbsp;<a href="https://www.spc.noaa.gov/products/">Outlooks</a><br>
+        &nbsp;&nbsp;<a href="https://www.weather.gov/alerts/">National</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">Current Conditions</span><br>
+        &nbsp;&nbsp;<a href="https://www.weather.gov/current">Observations</a><br>
+        &nbsp;&nbsp;<a href="https://www.star.nesdis.noaa.gov/GOES/GOES16_FullDisk_Band.php?band=GEOCOLOR&amp;length=96/">Satellite Images</a><br>
+        &nbsp;&nbsp;<a href="https://radar.weather.gov/">Radar Imagery</a><br>
+        &nbsp;&nbsp;<a href="http://www.nws.noaa.gov/om/water/hsd_products.shtml">Lakes &amp; Rivers</a><br>
+        &nbsp;&nbsp;<a href="https://www.swpc.noaa.gov/">Space Weather</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">Unified Surface Analysis</span><br>
+        &nbsp;&nbsp;<a href="http://www.opc.ncep.noaa.gov/">Northern<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hemisphere<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Surface<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analysis</a><br>
+        &nbsp;&nbsp;<a href="http://www.opc.ncep.noaa.gov/Loops/">Product Loops</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">Environmental Models</span><br>
+        &nbsp;&nbsp;<a href="https://www.nco.ncep.noaa.gov/pmb/products/">Product Info</a><br>
+        &nbsp;&nbsp;<a href="https://www.nco.ncep.noaa.gov/pmb/nwprod/prodstat/">Current Status</a><br>
+        &nbsp;&nbsp;<a href="https://mag.ncep.noaa.gov/">Model Analyses<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp; Guidance</a>
+      </td>
+    </tr>        
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">Forecasts</span><br>
+        &nbsp;&nbsp;<a href="http://www.wpc.ncep.noaa.gov/noaa/noaa.gif">Current</a><br>
+        &nbsp;&nbsp;<a href="http://www.cpc.ncep.noaa.gov/products/predictions/610day/">6 to 10 Day</a><br>
+        &nbsp;&nbsp;<a href="http://aviationweather.gov/">Aviation</a><br>
+        &nbsp;&nbsp;<a href="http://www.nhc.noaa.gov/">Hurricane</a><br>
+        &nbsp;&nbsp;<a href="http://www.opc.ncep.noaa.gov/">Marine</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.nhc.noaa.gov/marine_forecasts.shtml">Tropical Marine</a><br>
+        &nbsp;&nbsp;<a href="http://www.spc.noaa.gov/products/fire_wx/">Fire Weather</a><br>
+        &nbsp;&nbsp;<a href="http://www.ncep.noaa.gov/nationalmaps/">Forecast Maps</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">Climate</span><br>
+        &nbsp;&nbsp;<a href="http://www.cpc.ncep.noaa.gov/">Climate Prediction</a><br>
+        &nbsp;&nbsp;<a href="http://www.ncdc.noaa.gov/oa/ncdc.html">Climate Archives</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">Weather Safety</span><br>
+        &nbsp;&nbsp;<a href="https://www.weather.gov/stormready/">Storm Ready</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">NOAA</span><br>
+        &nbsp;&nbsp;<a href="https://library.noaa.gov/">Central Library</a><br>
+        &nbsp;&nbsp;<a href="http://www.photolib.noaa.gov/">Photo Library</a><br>
+        &nbsp;&nbsp;<a href="http://www.noaa.gov/NOAA-Communications">Public Affairs</a><br>
+        &nbsp;&nbsp;<a href="https://www.usajobs.gov/">Employment</a><br>
+        &nbsp;&nbsp;<a href="http://www.noaa.gov/education">Education<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resources</a><br>        
+        &nbsp;&nbsp;<a href="https://www.instagram.com/noaa/">Image of the Day</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">About Us</span><br>
+        &nbsp;&nbsp;<a href="http://www.ncep.noaa.gov/mission/">Our Mission</a><br>
+        &nbsp;&nbsp;<a href="http://www.ncep.noaa.gov/about/">The Centers</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <span class="yellow">Contact Us</span><br>
+        &nbsp;&nbsp;<a href="http://www.ncep.noaa.gov/mail_dataquestions/">Data Questions</a><br>
+        &nbsp;&nbsp;<a href="/mail_webmaster/">Website Questions</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="white" id="menuitem" colspan="2">
+        <hr>
+        <a href="http://www.usa.gov/"><img src="/cwi/usagov_logo_color_110w.gif" alt="USA.gov is the U.S. government's official web portal to all federal, state and local government web resources and services." width="110" height="30" border="0"></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+   <!-- Use virtual include, because this should be in a common place within your DocumentRoot. -->
+    </td>
+    <td valign="top" width="540"><a name="contents"></a>
+      <a href="http://www.ncep.noaa.gov/">NCEP Home</a> &gt; <a href="/">NCEP Central Operations</a> &gt; <a href="/idsb/">Implementation and Data Services Branch</a> &gt; Realtime Monitor<br><br>
+        
+<center>
+<p></p><h1> <font color="blue"> NCEP REAL TIME DATA MONITORING SYSTEM </font> </h1><p></p>
+</center>
+  
+<center>
+<h1>Hourly Data Dump Tables</h1>
+</center>
+<center>
+<a href="hourly/t09z/index.summary.shtml"><font size="3">View the latest hourly text summary</font></a><br>
+</center>
+<table border="5" align="center" width="80%" cellpadding="5" cellspacing="10">
+<tbody><tr>
+<th align="CENTER" colspan="15"><p><b> <font color="blue">CLICK ON UNDERLINED HOUR / SHADED BOX FOR THE LATEST CYCLE</font></b></p></th>
+</tr>
+<tr>
+<th align="CENTER" colspan="1"><p><a href="hourly/t00z/index.shtml" title="00z - Shortage in any one of the data types of opportunity"><font color="magenta">00z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t01z/index.shtml" title="01z - Shortage in any one of the data types of opportunity"><font color="magenta">01z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t02z/index.shtml" title="02z - Shortage in any one of the data types of opportunity"><font color="magenta">02z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t03z/index.shtml" title="03z - Shortage in any one of the data types of opportunity"><font color="magenta">03z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t04z/index.shtml" title="04z - Shortage in any one of the data types of opportunity"><font color="magenta">04z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t05z/index.shtml" title="05z - Shortage in any one of the data types of opportunity"><font color="magenta">05z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t06z/index.shtml" title="06z - Shortage in any one of the data types of opportunity"><font color="magenta">06z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t07z/index.shtml" title="07z - Shortage in any one of the data types of opportunity"><font color="magenta">07z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t08z/index.shtml" title="08z - Shortage in any one of the data types of opportunity"><font color="magenta">08z</font></a></p></th>
+<th align="CENTER" colspan="1" bgcolor="#e6e6f6"><p><u><a href="hourly/t09z/index.shtml" title="09z - Shortage in any one of the data types of opportunity"><font color="magenta">09z</font></a></u></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t10z/index.shtml" title="10z - Shortage in any one of the data types of opportunity"><font color="magenta">10z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t11z/index.shtml" title="11z - Shortage in any one of the data types of opportunity"><font color="magenta">11z</font></a></p></th>
+</tr>
+     
+<tr>
+<th align="CENTER" colspan="1"><p><a href="hourly/t12z/index.shtml" title="12z - Shortage in any one of the data types of opportunity"><font color="magenta">12z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t13z/index.shtml" title="13z - Shortage in any one of the data types of opportunity"><font color="magenta">13z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t14z/index.shtml" title="14z - Shortage in any one of the data types of opportunity"><font color="magenta">14z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t15z/index.shtml" title="15z - Shortage in any one of the data types of opportunity"><font color="magenta">15z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t16z/index.shtml" title="16z - Shortage in any one of the data types of opportunity"><font color="magenta">16z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t17z/index.shtml" title="17z - Shortage in any one of the data types of opportunity"><font color="magenta">17z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t18z/index.shtml" title="18z - Shortage in any one of the data types of opportunity"><font color="magenta">18z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t19z/index.shtml" title="19z - Shortage in any one of the data types of opportunity"><font color="magenta">19z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t20z/index.shtml" title="20z - Shortage in any one of the data types of opportunity"><font color="magenta">20z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t21z/index.shtml" title="21z - Shortage in any one of the data types of opportunity"><font color="magenta">21z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t22z/index.shtml" title="22z - Shortage in any one of the data types of opportunity"><font color="magenta">22z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="hourly/t23z/index.shtml" title="23z - Shortage in any one of the data types of opportunity"><font color="magenta">23z</font></a></p></th>
+</tr>
+</tbody></table>
+  
+<center>
+<h1>RAP Data Dump Tables</h1>
+</center>
+<center>
+<a href="rap/t09z/index.summary.shtml"><font size="3">View the latest rap text summary</font></a><br>
+</center>
+<table border="5" align="center" width="80%" cellpadding="5" cellspacing="10">
+<tbody><tr>
+<th align="CENTER" colspan="15"><p><b> <font color="blue">CLICK ON UNDERLINED HOUR / SHADED BOX FOR THE LATEST CYCLE</font></b></p></th>
+</tr>
+<tr>
+<th align="CENTER" colspan="1"><p><a href="rap/t00z/index.shtml" title="00z - Normal counts for all critical and sub-critical data types"><font color="green">00z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t01z/index.shtml" title="01z - Normal counts for all critical and sub-critical data types"><font color="green">01z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t02z/index.shtml" title="02z - Normal counts for all critical and sub-critical data types"><font color="green">02z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t03z/index.shtml" title="03z - Normal counts for all critical and sub-critical data types"><font color="green">03z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t04z/index.shtml" title="04z - Shortage in any one of the data types of opportunity"><font color="magenta">04z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t05z/index.shtml" title="05z - Shortage in any one of the data types of opportunity"><font color="magenta">05z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t06z/index.shtml" title="06z - Normal counts for all critical and sub-critical data types"><font color="green">06z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t07z/index.shtml" title="07z - Shortage in any one of the data types of opportunity"><font color="magenta">07z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t08z/index.shtml" title="08z - Normal counts for all critical and sub-critical data types"><font color="green">08z</font></a></p></th>
+<th align="CENTER" colspan="1" bgcolor="#e6e6f6"><p><u><a href="rap/t09z/index.shtml" title="09z - Normal counts for all critical and sub-critical data types"><font color="green">09z</font></a></u></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t10z/index.shtml" title="10z - Normal counts for all critical and sub-critical data types"><font color="green">10z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t11z/index.shtml" title="11z - Shortage in any one of the data types of opportunity"><font color="magenta">11z</font></a></p></th>
+</tr>
+     
+<tr>
+<th align="CENTER" colspan="1"><p><a href="rap/t12z/index.shtml" title="12z - Shortage in any one of the data types of opportunity"><font color="magenta">12z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t13z/index.shtml" title="13z - Shortage in any one of the data types of opportunity"><font color="magenta">13z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t14z/index.shtml" title="14z - Shortage in any one of the data types of opportunity"><font color="magenta">14z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t15z/index.shtml" title="15z - Shortage in any one of the data types of opportunity"><font color="magenta">15z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t16z/index.shtml" title="16z - Normal counts for all critical and sub-critical data types"><font color="green">16z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t17z/index.shtml" title="17z - Shortage in any one of the data types of opportunity"><font color="magenta">17z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t18z/index.shtml" title="18z - Shortage in any one of the data types of opportunity"><font color="magenta">18z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t19z/index.shtml" title="19z - Shortage in any one of the data types of opportunity"><font color="magenta">19z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t20z/index.shtml" title="20z - Shortage in any one of the data types of opportunity"><font color="magenta">20z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t21z/index.shtml" title="21z - Shortage in any one of the data types of opportunity"><font color="magenta">21z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t22z/index.shtml" title="22z - Shortage in any one of the data types of opportunity"><font color="magenta">22z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="rap/t23z/index.shtml" title="23z - Shortage in any one of the data types of opportunity"><font color="magenta">23z</font></a></p></th>
+</tr>
+</tbody></table>
+  
+<center>
+<h1>Model Data Dump Tables </h1>
+</center>
+<table align="center">
+<tbody><tr valign="top">
+<th align="CENTER" colspan="1"><p><font color="blue"> View the latest model data text summary &nbsp;&nbsp;</font></p></th>
+<th colspan="1"><p><a href="nam/t06z/index.summary.shtml" title="Summary for 06z NAM"><font color="green">NAM</font></a></p></th>
+<th colspan="1"><p><a href="gfs/t06z/index.summary.shtml" title="Summary for 06z GFS"><font color="green">GFS</font></a></p></th>
+<th colspan="1"><p><a href="gds/t00z/index.summary.shtml" title="Summary for 00z GDS"><font color="green">GDS</font></a></p></th>
+</tr>
+</tbody></table>
+<table border="5" align="center" width="80%" cellpadding="5" cellspacing="10">
+<tbody><tr>
+<th align="CENTER" colspan="15"><p><b> <font color="blue">CLICK ON UNDERLINED HOUR / SHADED BOX FOR THE LATEST CYCLE</font></b></p></th>
+</tr>
+<tr valign="top">
+<th colspan="4" align="center"><font size="+1"> NAM </font></th>
+<th colspan="4" align="center"><font size="+1"> GFS </font></th>
+<th colspan="4" align="center"><font size="+1"> GDS </font></th>
+</tr> <tr valign="top">
+<th align="CENTER" colspan="1"><p><a href="nam/t00z/index.shtml" title="00z - Shortage in any one of the data types of opportunity"><font color="magenta">00z</font></a></p></th>
+<th align="CENTER" colspan="1" bgcolor="#e6e6f6"><p><u><a href="nam/t06z/index.shtml" title="06z - Shortage in any one of the data types of opportunity"><font color="magenta">06z</font></a></u></p></th>
+<th align="CENTER" colspan="1"><p><a href="nam/t12z/index.shtml" title="12z - Shortage in any one of the sub-critical data types"><font color="orange">12z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="nam/t18z/index.shtml" title="18z - Shortage in any one of the sub-critical data types"><font color="orange">18z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="gfs/t00z/index.shtml" title="00z - Shortage in any one of the data types of opportunity"><font color="magenta">00z</font></a></p></th>
+<th align="CENTER" colspan="1" bgcolor="#e6e6f6"><p><u><a href="gfs/t06z/index.shtml" title="06z - Shortage in any one of the data types of opportunity"><font color="magenta">06z</font></a></u></p></th>
+<th align="CENTER" colspan="1"><p><a href="gfs/t12z/index.shtml" title="12z - Shortage in any one of the data types of opportunity"><font color="magenta">12z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="gfs/t18z/index.shtml" title="18z - Shortage in any one of the data types of opportunity"><font color="magenta">18z</font></a></p></th>
+<th align="CENTER" colspan="1" bgcolor="#e6e6f6"><p><u><a href="gds/t00z/index.shtml" title="00z - Shortage in any one of the data types of opportunity"><font color="magenta">00z</font></a></u></p></th>
+<th align="CENTER" colspan="1"><p><a href="gds/t06z/index.shtml" title="06z - Shortage in any one of the data types of opportunity"><font color="magenta">06z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="gds/t12z/index.shtml" title="12z - Shortage in any one of the data types of opportunity"><font color="magenta">12z</font></a></p></th>
+<th align="CENTER" colspan="1"><p><a href="gds/t18z/index.shtml" title="18z - Shortage in any one of the data types of opportunity"><font color="magenta">18z</font></a></p></th>
+</tr>
+</tbody></table>
+<p align="right"><a <font="" color="BLUE"> HLY Updated: 20220920 t09z </a></p>
+  
+  
+
+
+
+</body></html>
